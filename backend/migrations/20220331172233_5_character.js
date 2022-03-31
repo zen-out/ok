@@ -4,6 +4,7 @@ exports.up = function(knex) {
         table.string('name').notNullable()
         table.string('background')
         table.string('background_effects')
+        table.integer('listening').notNullable()
         table.integer('strength').notNullable()
         table.integer('dexterity').notNullable()
         table.integer('intelligence').notNullable()
