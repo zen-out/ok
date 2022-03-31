@@ -2,8 +2,8 @@ exports.up = function(knex) {
     return knex.schema.createTable("character", (table) => {
         table.increments('id').primary()
         table.string('name').notNullable()
-        table.string('background')
-        table.string('background_effects')
+        table.string('background', 2000)
+        table.string('background_effects', 2000)
         table.integer('listening').notNullable()
         table.integer('strength').notNullable()
         table.integer('dexterity').notNullable()
@@ -17,8 +17,7 @@ exports.up = function(knex) {
         table.integer('experience_points')
         table.integer('kills')
         table.string('image')
-        table.integer('user_id').unsigned()
-        table.foreign('user_id').references('users.id')
+        table.integer("user_id").unsigned().references("users.id").onUpdate("CASCADE").onDelete("CASCADE")
     });
 };
 

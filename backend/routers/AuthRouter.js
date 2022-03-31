@@ -31,7 +31,6 @@ class AuthRouter {
                 res.json({ token })
             } catch (err) {
                 if (err) {
-                    console.log(err)
                     res.sendStatus(401)
                 }
             }
@@ -51,6 +50,7 @@ class AuthRouter {
 
                 if (check) {
                     // create use and return token
+
                     // #TODO: hard coded to true, change back later to see what sam is teaching
                     let token = await this.authService.makeUser(
                         req.body.email,

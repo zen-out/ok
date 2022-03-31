@@ -3,9 +3,9 @@ exports.up = function(knex) {
         table.increments('id').primary()
         table.string('item').notNullable()
         table.integer('amount').notNullable()
-        table.integer('character_id').unsigned()
+        table.integer('character_id')
         table.foreign('character_id').references('character.id')
-        table.integer('item_id').unsigned()
+        table.integer('item_id')
         table.foreign('item_id').references('items.id')
     });
 };

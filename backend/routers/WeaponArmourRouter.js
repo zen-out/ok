@@ -6,6 +6,8 @@ Update weapon
 update ammunition
 
 Update armour
+
+well done sam a+
 */
 
 const auth = require('../auth/auth')
@@ -22,22 +24,18 @@ class WeaponArmourRouter {
         router.get('/armoury', this.getAll.bind(this))
         router.get(
             '/armoury/:characterId',
-            this.authClass.authenticate(),
             this.getCurrent.bind(this)
         )
         router.post(
             '/armoury/items/:characterId',
-            this.authClass.authenticate(),
             this.postItems.bind(this)
         )
         router.put(
             '/armoury/items/:characterId',
-            this.authClass.authenticate(),
             this.putItems.bind(this)
         )
         router.put(
             '/armoury/new/:characterId',
-            this.authClass.authenticate(),
             this.putWeapons.bind(this)
         )
         return router
@@ -80,5 +78,7 @@ class WeaponArmourRouter {
             .then(response => res.send(response))
     }
 }
+
+
 
 module.exports = WeaponArmourRouter

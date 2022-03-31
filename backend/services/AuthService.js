@@ -14,6 +14,7 @@ const config = {
         session: false
     }
 }
+
 const knex = require("knex")({
     client: "postgresql",
     connection: {
@@ -84,25 +85,19 @@ class AuthService {
             .returning('id')
 
         const payload = { id: userID[0].id }
-
         let token = this.jwt.sign(payload, this.config.jwtSecret)
-
         return token
     }
 }
 
-let be_real = new AuthService(knex, jwt, config)
+// let be_real = new AuthService(knex, jwt, config)
 async function test() {
-    // let new_user = await be_real.makeUser("lesley@sorry.com", "cyrus", true)
-    // console.log(new_user)
-
-    // let new_user_2 = await be_real.makeUser("cyrus@gmail.com", "try_my_best", true)
-    // console.log(new_user_2)
-    // let boyfriend_can_be_bestfriend = await be_real.checkUser("cyrus@gmail.com")
-    // see.should("get boyfriend back")
-    // see.is(boyfriend_can_be_bestfriend)
+    let new_user_7 = await be_real.makeUser("cyrus@gmail.com", "try_my_best", true)
+    console.log(new_user_7)
+    let boyfriend_can_be_bestfriend = await be_real.checkUser("cyrus@gmail.com")
+    see.should("get boyfriend back")
+    see.is(boyfriend_can_be_bestfriend)
     let only_you = await be_real.loginUser("cyrus@gmail.com", "try_my_best")
-        // returns the token
     console.log(only_you)
 }
 // test()

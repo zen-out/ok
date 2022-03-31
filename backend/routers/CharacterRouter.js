@@ -1,15 +1,37 @@
-/*
+const { see } = require("code_clarity")
+see.problem("i think sam might be upset at me but why would he write this whole chunk of code out?")
+see.should("i think he might miss dnd too")
+see.is("we need community")
+see.step("")
+see.how("")
+see.problem("he doesnt want to be friends with you.")
+see.problem("maybe he does want to be friends with you")
+see.problem("he wants to be loyal to andre")
+see.step("i already apologized")
+see.how("")
+see.problem("i miss my friends")
+see.step("fix this. yeah, daughter of a salesperson, you know what kind of message thats sending.")
+see.problem("i want to learn thooo")
+see.step("he wrote a repository for you, that's how kind he is, you idiot.")
+see.problem("i still want to be friends with him")
+see.how("make it really good dude like be professional.")
+see.step("get married.")
+see.should("men and women should be able to be friends but like feelings always develop, i think")
+see.is("be more bro-ey like play video games and shit.")
+see.is("read more books. chill the fuck out.")
+see.motherlode("do what you want.")
+    /*
 
-Get all characters by user --> user_id
-Place all character information in Redux 
+    Get all characters by user --> user_id
+    Place all character information in Redux 
 
-update character form (name - background - background effect)
+    update character form (name - background - background effect)
 
-update character stats - strength - dexterity - intelligence - charisma - concentration
-update character status - hp - stamina - gold - silver
+    update character stats - strength - dexterity - intelligence - charisma - concentration
+    update character status - hp - stamina - gold - silver
 
-update a new image for user
-*/
+    update a new image for user
+    */
 
 class CharacterRouter {
     constructor(express, characterService, authClass) {
@@ -20,27 +42,23 @@ class CharacterRouter {
 
     router() {
         let router = this.express.Router()
-        router.post('/create', this.authClass.authenticate(), this.post.bind(this))
-        router.get('/all', this.authClass.authenticate(), this.get.bind(this))
+        router.post('/create', this.post.bind(this))
+        router.get('/all', this.get.bind(this))
         router.get('/skills', this.getSkills.bind(this))
         router.get(
             '/skills/:characterId',
-            this.authClass.authenticate(),
             this.getCurrentSkills.bind(this)
         )
         router.put(
             '/stats/:characterId',
-            this.authClass.authenticate(),
             this.putUpdateStats.bind(this)
         )
         router.put(
             '/statistics/:characterId',
-            this.authClass.authenticate(),
             this.putUpdateStatistics.bind(this)
         )
         router.put(
             '/skills/:characterId',
-            this.authClass.authenticate(),
             this.putUpdateSkills.bind(this)
         )
 
@@ -95,5 +113,6 @@ class CharacterRouter {
             .then(response => res.send('all done'))
     }
 }
+
 
 module.exports = CharacterRouter
