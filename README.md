@@ -1,2 +1,1 @@
-# youre_mean
- attempts
+# attempts at finding purpose 
