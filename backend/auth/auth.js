@@ -19,7 +19,7 @@ see.problem("i was so insecure")
 see.problem("a lot of people fucking hate me")
 see.should("should not return to a place you are not welcome")
 see.is("clean it up.")
-see.how("stop feeling. act logically.")
+see.how("be yourself.")
 const ExtractJwt = passportJWT.ExtractJwt
 
 module.exports = knex => {
