@@ -1,1 +1,0 @@
-# attempts at finding purpose 
