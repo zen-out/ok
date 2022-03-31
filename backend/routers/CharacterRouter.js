@@ -20,6 +20,7 @@ see.should("men and women should be able to be friends but like feelings always 
 see.is("be more bro-ey like play video games and shit.")
 see.is("read more books. chill the fuck out.")
 see.motherlode("do what you want.")
+see.is("you miss the teaching, silly")
     /*
 
     Get all characters by user --> user_id
