@@ -4,7 +4,16 @@ const { see } = require("code_clarity")
     // google signup / facebook
 
 const bcrypt = require('bcrypt')
+var jwt = require('jsonwebtoken');
+const passportJWT = require('passport-jwt')
 
+
+const config = {
+    jwtSecret: "all_my_secrets",
+    jwtSession: {
+        session: false
+    }
+}
 const knex = require("knex")({
     client: "postgresql",
     connection: {
@@ -27,7 +36,8 @@ class AuthService {
             .from('users')
             .where({ email: email })
             .then(data => data[0])
-
+        see.should("come back perfect")
+        see.is(user)
         if (await bcrypt.compare(password, user.password)) {
             const payload = {
                 id: user.id
@@ -41,21 +51,25 @@ class AuthService {
     }
 
     async checkUser(email) {
-        const user = await this.knex
-            .select('*')
-            .from('users')
-            .where({ email: email })
-            .then(data => data[0])
+            const user = await this.knex
+                .select('*')
+                .from('users')
+                .where({ email: email })
+                .then(data => data[0])
 
-        console.log(user)
+            console.log(user)
 
-        if (user !== undefined) {
-            console.log('user taken')
-        } else {
-            return true
+            if (user !== undefined) {
+                console.log('user taken')
+            } else {
+                return true
+            }
         }
-    }
-
+        /**
+         * @example
+         * Returns token
+         * @author github.com/zen-out
+         */
     async makeUser(email, password, player) {
         let hashedPassword = await bcrypt.hash(password, 10)
         let user = {
@@ -76,9 +90,16 @@ class AuthService {
     }
 }
 
-let be_real = new AuthService()
+let be_real = new AuthService(knex, jwt, config)
 async function test() {
-    let new_user = await be_real.makeUser("lesley.yc@gmail.com", "cyrus", true)
+    // let new_user = await be_real.makeUser("lesley.yc@gmail.com", "cyrus", true)
+    // console.log(new_user)
+
+    // let new_user_2 = await be_real.makeUser("cyrus@gmail.com", "try_my_best", true)
+    // console.log(new_user_2)
+    let boyfriend_can_be_bestfriend = await be_real.checkUser("cyrus@gmail.com")
+    see.should("get boyfriend back")
+    see.is(boyfriend_can_be_bestfriend)
 }
-test()
+// test()
 module.exports = AuthService
