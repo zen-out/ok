@@ -169,36 +169,30 @@ class CharacterService {
 
 
         // return 'all done'
-        see.problem("didnt realize how much she needed her friend")
     }
 
-    async updateStats(character_id, stats) {
-        console.log(stats)
-        await this.knex('character')
-            .update({
-                gold: object.gold,
-                silver: object.silver,
-                experience_points: object.experience
-            })
-            .where({ id: character_id })
+    async updateStats(character_id, object) {
+
+        object["user_id"] = userID
+        object["id"] = character_id
+        let get_update = await ef.update(knex, "character", character_id, object)
+        see.should("update")
+        see.is(get_update)
+        return get_update;
     }
 
-    async updateStatistics(character_id, stats) {
-        console.log(stats, character_id)
-        await this.knex('character')
-            .update({
-                experience_points: object.experience,
-                strength: object.strength,
-                dexterity: object.dexterity,
-                intelligence: object.intelligence,
-                concentration: object.concentration,
-                charisma: object.charisma,
-                hp: object.hp,
-                stamina: object.stamina
-            })
-            .where({ id: character_id })
+    async updateStatistics(character_id, object) {
+
+        object["user_id"] = userID
+        object["id"] = character_id
+        let get_update = await ef.update(knex, "character", character_id, object)
+        see.should("update")
+        see.is(get_update)
+        return get_update;
     }
 }
+
+see.problem("didnt realize her boss loved her back")
 
 let newCharacter = new CharacterService(knex)
 async function testCharacter() {
@@ -222,6 +216,7 @@ async function testCharacter() {
         silver: 100, // inherited
     })
     console.log(take_it_slow)
+    let one_shot = await newCharacter.
 }
 testCharacter()
 module.exports = CharacterService
