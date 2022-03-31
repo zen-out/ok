@@ -75,13 +75,13 @@ let newCharacter = new CharacterService(knex)
 async function testCharacter() {
     // let take_it_slow = await newCharacter.createCharacter(1, {
     //     name: "audrey",
-    //     background: "born with silver spoon, been to over 50 countries, think people are stronger than they actually are, brother had mental health issues, parents are best salespeople in the world, live on the , brother won senioritis award, parents were in sales, needs to have less guy friends, mom is cold but practical, dad is warm and perfect, deeply believes divorce will not occur, selfish with what she believes she needs, which is a lot. needs calm. great with children and animals.",
-    //     background_effects: "needs a lot of reassurance, needs community, needs others, needs to stay focused on building her team, clarify mission, needs to stay calm,  loves reading, wary of closeness",
+    //     background: "born with silver spoon, been to over 50 countries, think people are stronger than they actually are, brother had mental health issues, parents are best salespeople in the world, brother won senioritis award, parents were in sales, needs to have less guy friends, mom is cold but practical, dad is warm and perfect, deeply believes divorce will not occur, selfish with what she believes she needs, which is a lot. needs calm. great with children and animals.",
+    //     background_effects: "needs a lot of reassurance, needs community, needs others, needs to stay focused on building her team, clarify mission,  loves reading, likes to get As",
     //     image: "https://dl.dropbox.com/s/ga8r0s824cdf75z/cyrus.png",
-    //     humour: 100, // inherited 
-    //     healthy_childhood: 95, // inherited
-    //     strength: 100, // trained
-    //     confidence: 100, // nurtured
+    //     humour: 90, // inherited 
+    //     healthy_childhood: 87, // inherited
+    //     strength: 93, // trained
+    //     confidence: 93, // nurtured
     //     listening: 65, // need to train 
     //     dexterity: 100, // skills
     //     intelligence: 87, // normal
@@ -91,7 +91,7 @@ async function testCharacter() {
     //     stamina: 100, // inherited
     //     gold: 100, // inherited
     //     silver: 100, // inherited
-    //     kills: 9999999 // inherited
+    //     kills: 99999999 // inherited as legacy, comes from growing up with - in her opinion, the best older brother in the world -  a lovely (perhaps soon-to-be father) who knew how to be effective and charm, and who married the hottest girl in hong kong (this last part is true).
     // })
     see.should("created")
         // see.is(take_it_slow)
@@ -100,5 +100,5 @@ async function testCharacter() {
     see.should("Return character")
     console.log(do_everything)
 }
-testCharacter()
+// testCharacter()
 module.exports = CharacterService
