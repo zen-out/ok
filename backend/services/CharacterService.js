@@ -192,7 +192,7 @@ class CharacterService {
     }
 }
 
-see.problem("didnt realize her boss loved her back")
+see.problem("didnt understand the value of loyalty")
 
 let newCharacter = new CharacterService(knex)
 async function testCharacter() {

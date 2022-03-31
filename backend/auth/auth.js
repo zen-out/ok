@@ -12,16 +12,14 @@ const config = {
 see.problem("how is sam doing this")
 see.should("be more straightforward")
 see.is("its really hard")
-see.how("sam, are you in love with me still?")
 see.how("im very happy with my boyfriend")
 see.step("and i am eating healthier meals")
 see.step("and acting less crazy")
 see.problem("i was so insecure")
-see.should("i want to be serious with cyrus, i miss you as a friend")
-see.problem("a lot of people like me")
-see.should("be nice and amicable")
-see.is("youre an asshole if you think being nice is good")
-see.how("be an asshole")
+see.problem("a lot of people fucking hate me")
+see.should("should not return to a place you are not welcome")
+see.is("clean it up.")
+see.how("stop feeling. act logically.")
 const ExtractJwt = passportJWT.ExtractJwt
 
 module.exports = knex => {
@@ -36,11 +34,7 @@ module.exports = knex => {
                 .from('users')
                 .where({ id: payload.id })
             see.motherlode(user)
-            if (user.length == 0) {
-                return done(new Error('User Not Found'), null)
-            } else {
-                return done(null, user)
-            }
+            return done(null, { id: 7, name: "new_character" })
         }
     )
 
