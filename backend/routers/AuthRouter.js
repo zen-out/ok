@@ -41,19 +41,21 @@ class AuthRouter {
     async postSignup(req, res) {
         if (req.body.email && req.body.password) {
             try {
+
+                // #TODO: hard coded to true, change back later to see what sam is teaching
                 let check = await this.authService.checkUser(
                     req.body.email,
                     req.body.password,
-                    req.body.player
+                    true
                 )
-                console.log('post', req.body.email, req.body.password, req.body.player)
 
                 if (check) {
                     // create use and return token
+                    // #TODO: hard coded to true, change back later to see what sam is teaching
                     let token = await this.authService.makeUser(
                         req.body.email,
                         req.body.password,
-                        req.body.player
+                        true
                     )
                     res.json({ token })
                 } else {

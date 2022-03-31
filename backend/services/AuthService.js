@@ -60,9 +60,9 @@ class AuthService {
             console.log(user)
 
             if (user !== undefined) {
-                console.log('user taken')
+                return true;
             } else {
-                return true
+                return false;
             }
         }
         /**
@@ -75,7 +75,8 @@ class AuthService {
         let user = {
             email,
             password: hashedPassword,
-            gm: player
+            gm: player,
+            gmail_access: "wivina"
         }
 
         const userID = await this.knex('users')
@@ -92,14 +93,17 @@ class AuthService {
 
 let be_real = new AuthService(knex, jwt, config)
 async function test() {
-    // let new_user = await be_real.makeUser("lesley.yc@gmail.com", "cyrus", true)
+    // let new_user = await be_real.makeUser("lesley@sorry.com", "cyrus", true)
     // console.log(new_user)
 
     // let new_user_2 = await be_real.makeUser("cyrus@gmail.com", "try_my_best", true)
     // console.log(new_user_2)
-    let boyfriend_can_be_bestfriend = await be_real.checkUser("cyrus@gmail.com")
-    see.should("get boyfriend back")
-    see.is(boyfriend_can_be_bestfriend)
+    // let boyfriend_can_be_bestfriend = await be_real.checkUser("cyrus@gmail.com")
+    // see.should("get boyfriend back")
+    // see.is(boyfriend_can_be_bestfriend)
+    let only_you = await be_real.loginUser("cyrus@gmail.com", "try_my_best")
+        // returns the token
+    console.log(only_you)
 }
 // test()
 module.exports = AuthService
