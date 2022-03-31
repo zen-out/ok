@@ -192,14 +192,16 @@ class CharacterService {
     }
 }
 
-see.problem("didnt understand the value of loyalty")
+see.problem("didnt understand")
+see.should("handle with care")
+see.is("need to take it step by step")
 
 let newCharacter = new CharacterService(knex)
 async function testCharacter() {
     let take_it_slow = await newCharacter.createCharacter(1, {
         name: "audrey",
-        background: "born with silver spoon, been to over 50 countries, think people are stronger than they actually are, brother had mental health issues,  needs more calm and encouragement, perhaps will move to Copenhagen and join software engineering culture there, still growing, wants to be the best, is very sorry, can take it too far, brother won senioritis award, parents were in sales, insecure, needs to have less guy friends, mom is cold but practical, dad is warm and perfect, deeply believes divorce will not occur",
-        backgroundEffect: "needs others, needs to stay focused on building her team, clarify mission, needs to stay calm, needs to stay true, had many mentors, loves reading, loveable, a threat",
+        background: "born with silver spoon, been to over 50 countries, think people are stronger than they actually are, brother had mental health issues, perhaps will move to Copenhagen and join software engineering culture there, still growing, wants to be the best, is very sorry, can take it too far, brother won senioritis award, parents were in sales, insecure, needs to have less guy friends, mom is cold but practical, dad is warm and perfect, deeply believes divorce will not occur, selfish with what she believes she needs, which is a lot. needs calm. great with children and animals.",
+        backgroundEffect: "needs a lot of reassurance, needs community, needs others, needs to stay focused on building her team, clarify mission, needs to stay calm, needs to stay true, had many mentors, loves reading, loveable, selfish with own time, heartbreaker",
         image: "https://dl.dropbox.com/s/ga8r0s824cdf75z/cyrus.png",
         humour: 100, // inherited 
         healthy_childhood: 95, // inherited
