@@ -83,6 +83,7 @@ async function testCharacter() {
     //     strength: 93, // trained
     //     confidence: 93, // nurtured
     //     listening: 65, // need to train 
+    //     speaking: 68, // need to train
     //     dexterity: 85, // skills
     //     intelligence: 87, // need to train
     //     education: 93, // inherited
