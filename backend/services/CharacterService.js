@@ -83,12 +83,12 @@ async function testCharacter() {
     //     strength: 93, // trained
     //     confidence: 93, // nurtured
     //     listening: 65, // need to train 
-    //     dexterity: 100, // skills
+    //     dexterity: 90, // skills
     //     intelligence: 87, // normal
     //     concentration: 85, // natural
     //     charisma: 60, // need to train
-    //     hp: 100, // trained
-    //     stamina: 100, // inherited
+    //     hp: 60, // need to train
+    //     stamina: 60, // need to train
     //     gold: 100, // inherited
     //     silver: 100, // inherited
     //     kills: 99999999 // inherited as legacy, comes from growing up with - in her opinion, the best older brother in the world -  a lovely (perhaps soon-to-be father) who knew how to be effective and charm, and who married the hottest girl in hong kong (this last part is true).
