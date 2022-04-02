@@ -95,7 +95,7 @@ async function testCharacter() {
     // })
     see.motherlode("dnd_pt_2")
     see.should("created")
-        // see.is(take_it_slow)
+        see.step(take_it_slow)
 
     let do_everything = await newCharacter.getCharacters(1)
     see.should("Return character")
