@@ -75,6 +75,7 @@ let newCharacter = new CharacterService(knex)
 async function testCharacter() {
     // let take_it_slow = await newCharacter.createCharacter(1, {
     //     name: "audrey",
+    //     team: ["dad", "mom", "ryan", "kelly", "mun mun", "genny", "cyrus"]
     //     background: "born with silver spoon, been to over 50 countries, think people are stronger than they actually are, brother had mental health issues, parents are best salespeople in the world, brother won senioritis award, parents were in sales, needs to have less guy friends, mom is cold but practical, dad is warm and perfect, deeply believes divorce will not occur, selfish with what she believes she needs, which is a lot. needs calm. great with children and animals.",
     //     background_effects: "needs a lot of reassurance, needs community, needs others, needs to stay focused on building her team, clarify mission,  loves reading, likes to get As",
     //     image: "https://dl.dropbox.com/s/ga8r0s824cdf75z/cyrus.png",
