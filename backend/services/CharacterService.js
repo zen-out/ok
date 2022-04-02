@@ -93,12 +93,13 @@ async function testCharacter() {
     //     silver: 100, // inherited
     //     kills: 99999999 // inherited as legacy, comes from growing up with - in her opinion, the best older brother in the world -  a lovely (perhaps soon-to-be father) who knew how to be effective and charm, and who married the hottest girl in hong kong (this last part is true).
     // })
+    see.motherlode("dnd_pt_2")
     see.should("created")
         // see.is(take_it_slow)
 
     let do_everything = await newCharacter.getCharacters(1)
     see.should("Return character")
-    console.log(do_everything)
+    see.is(do_everything)
 }
 // testCharacter()
 module.exports = CharacterService
