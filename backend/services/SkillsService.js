@@ -49,7 +49,7 @@ let skillz = new CharacterSkills(knex)
 
 async function how_do_we_motivate_test() {
     let audrey_skill_one = await skillz.createCharacterSkills(1, ["self_control", "nurture", "conservative", "diplomacy", "cooking", "simplicity", "openmindedness", "host", "teach", "reassure", "support", "mentor"]);
-    let audrey_skill_two = await skillz.createCharacterSkills(1, ["tests", "readme", "trust in your own experiences", "git commit messages (huskey)", "publishing", "simplicity", "happy family happy life", "friends on saturday", "teach", "stop having guy friends", "think about what cyrus needs", "get more massages"]);
+    let audrey_skill_two = await skillz.createCharacterSkills(1, ["tests", "readme", "trust in your own experiences", "git commit messages (huskey)", "publishing", "simplicity", "happy family happy life", "friends on saturday", "craft", "stop having guy friends", "think about what cyrus needs", "get more massages"]);
 }
 
 how_do_we_motivate_test()
