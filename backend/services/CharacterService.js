@@ -74,31 +74,29 @@ see.should("pretend you never saw it.")
 let newCharacter = new CharacterService(knex)
 async function testCharacter() {
     // let take_it_slow = await newCharacter.createCharacter(1, {
-    //     name: "audrey",
+    //     name: "lezzles",
+    //     philosophy: "what do you love?",
     //     team: ["dad", "mom", "ryan", "kelly", "mun mun", "genny", "cyrus"],
-    //     background: "born with silver spoon, been to over 50 countries, think people are stronger than they actually are, brother had mental health issues, parents are best salespeople in the world, brother won senioritis award, parents were in sales, needs to have less guy friends, mom is cold but practical, dad is warm and perfect, deeply believes divorce will not occur, selfish with what she believes she needs, which is a lot. needs calm. great with children and animals.",
-    //     background_effects: "needs a lot of reassurance, needs community, needs others, needs to stay focused on building her team, clarify mission,  loves reading, likes to get As",
+    //     background: "teacher with silver spoon, been to over 50 countries, think people are stronger than they actually are, brother had mental health issues, parents are best salespeople in the world, brother won senioritis award, likes skiing - mostly because of the cooking together, needs to have less guy friends, mom is cold but practical, dad is warm and perfect, deeply believes divorce will not occur, selfish with what she believes she needs, which is a lot. needs calm. great with children and animals. believes in love.",
+    //     background_effects: "needs a lot of reassurance, needs community, needs others, needs to stay focused on building her team, clarify mission,  loves reading, likes to get As, loves her family, loves her boyfriend, may need to earn more money to continue going on skiing vacations, need to create better checklists, need to stop writing this now.",
     //     image: "https://dl.dropbox.com/s/ga8r0s824cdf75z/cyrus.png",
     //     humour: 90, // inherited 
-    //     healthy_childhood: 87, // inherited
+    //     healthy_childhood: done, 
     //     strength: 93, // trained
     //     confidence: 93, // nurtured
-    //     listening: 65, // need to train 
-    //     speaking: 68, // need to train
-    //     dexterity: 85, // skills
+    //     listening: 80, // need to train 
+    //     speaking: 85, // need to train
+    //     dexterity: 83, // skills
     //     intelligence: 87, // need to train
     //     education: 93, // inherited
     //     concentration: 85, // natural
-    //     charisma: 60, // need to train
     //     hp: 60, // need to train
-    //     stamina: 60, // need to train
-    //     gold: 100, // inherited
-    //     silver: 100, // inherited
+    //     stamina: 60, // need to train,
     //     kills: 99999999 // inherited as legacy, comes from growing up with - in her opinion, the best older brother in the world -  a lovely (perhaps soon-to-be father) who knew how to be effective and charm, and who married the hottest girl in hong kong (this last part is true).
     // })
     see.motherlode("dnd_pt_2")
     see.should("created")
-        see.step(take_it_slow)
+    see.step(take_it_slow)
 
     let do_everything = await newCharacter.getCharacters(1)
     see.should("Return character")
